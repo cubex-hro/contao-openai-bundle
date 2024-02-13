@@ -1,0 +1,40 @@
+{
+    "name": "cubex-hro/contao-gpt-bundle",
+    "type": "contao-bundle",
+    "license": "MIT",
+    "description": "enables the generation of meta-title and meta-descriptions in the backend of Contao using ChatGPT from OpenAi",
+    "authors": [
+        {
+            "name": "Christopher Griesch",
+            "email": "chris@code-buster.de",
+            "homepage": "https://www.code-buster.de",
+            "role": "Project leader"
+        }
+    ],
+    "keywords": [
+        "contao",
+        "gpt",
+        "ki",
+        "ai",
+        "seo"
+    ],
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "contao/core-bundle": "^4.9"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.3.1"
+    },
+    "conflict": {
+        "contao/core": "*",
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codebuster\\GptBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Codebuster\\GptBundle\\ContaoManager\\Plugin"
+    }
+}

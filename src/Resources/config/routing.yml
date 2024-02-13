@@ -1,0 +1,4 @@
+# config/routes.yaml
+gpt_data:
+  resource: ../../Controller
+  type: annotation
