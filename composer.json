@@ -1,5 +1,5 @@
 {
-    "name": "cubex-hro/contao-gpt-bundle",
+    "name": "cubex-hro/contao-openai-bundle",
     "type": "contao-bundle",
     "license": "MIT",
     "description": "enables the generation of meta-title and meta-descriptions in the backend of Contao using ChatGPT from OpenAi",
