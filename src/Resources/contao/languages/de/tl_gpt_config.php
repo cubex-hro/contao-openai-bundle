@@ -14,6 +14,6 @@ $GLOBALS["TL_LANG"][$strTable] = [
     "gpt_model_complete"    => ["GPT Completion Model","Sehen Sie sich die Models und deren Funktion im <a href='https://platform.openai.com/playground?mode=complete' target='_blank' style='font-weight:bold;'>Playground</a> an."],
     "gpt_title_prompt"      => ["SEO-Titel prompt","Tragen Sie hier das Prompt für die Titelgenerierung ein."],
     "gpt_desc_prompt"       => ["SEO-Beschreibung prompt","Tragen Sie hier das Prompt für die Beschreibungsgenerierung ein."],
-    "gpt_temp"              => ["temperature","The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use log probability to automatically increase the temperature until certain thresholds are hit."],
-    "gpt_max_tokens"        => ["max_tokens","The maximum number of tokens to generate in the chat completion. The total length of input tokens and generated tokens is limited by the models context length."]
+    "gpt_temp"              => ["Temperatur","Die Samplingtemperatur liegt zwischen 0 und 1. Höhere Werte wie 0,8 machen die Ausgabe zufälliger, während niedrigere Werte wie 0,2 sie fokussierter und deterministischer machen. Wenn der Wert auf 0 gesetzt ist, verwendet das Modell die Log-Wahrscheinlichkeit, um die Temperatur automatisch zu erhöhen, bis bestimmte Schwellenwerte erreicht werden."],
+    "gpt_max_tokens"        => ["maximale Token","Die maximale Anzahl an Token, die beim Chat-Abschluss generiert werden sollen. Die Gesamtlänge der Eingabetokens und generierten Tokens ist durch die Kontextlänge des Modells begrenzt."]
 ];
