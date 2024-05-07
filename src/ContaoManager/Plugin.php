@@ -9,10 +9,10 @@ declare(strict_types=1);
  * @license LGPL-3.0-or-later
  */
 
-namespace Codebuster\GptBundle\ContaoManager;
+namespace Codebuster\ContaoOpenaiBundle\ContaoManager;
 
-use Codebuster\ContaoOpenaiBundle\ContaoOpenaiBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
+use Codebuster\ContaoOpenaiBundle\ContaoOpenaiBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
@@ -46,8 +46,7 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
     {
         return $resolver
             ->resolve(__DIR__.'/../Resources/config/routes.yml')
-            ->load(__DIR__.'/../Resources/config/routes.yml')
-            ;
+            ->load(__DIR__.'/../Resources/config/routes.yml');
     }
 
 }
