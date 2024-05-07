@@ -31,10 +31,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Codebuster\\GptBundle\\": "src/"
+            "Codebuster\\ContaoOpenaiBundle\\": "src/"
         }
     },
     "extra": {
-        "contao-manager-plugin": "Codebuster\\GptBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Codebuster\\ContaoOpenaiBundle\\ContaoManager\\Plugin"
     }
 }
