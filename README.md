@@ -26,6 +26,11 @@ composer require cubex-hro/contao-openai-bundle
 - There is a fee to use the OpenAI API. An overview of OpenAI pricing can be found here: [https://openai.com/pricing](https://openai.com/pricing)
 - We tested a lot and so far we haven't gotten more than $5 a month
 
+## TinyMCE Plugin notes
+![](docs/tinymce.png)
+
+Please make sure you don't have a custom be_tinyMCE.html5 template. If so, take a look at src/Resources/contao/templates/be_tinyMCE.html5 and adjust the relevant places manually.
+
 ## Screenshots
 
 ![](docs/preview.png)
