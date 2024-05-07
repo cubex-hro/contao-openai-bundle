@@ -16,7 +16,7 @@ composer require cubex-hro/contao-openai-bundle
 
 | Contao Version | PHP Version |
 |----------------|-------------|
-| \>= 4.9        | ^7.0 ǀǀ ^8.0 |
+| \>= 5.3        | ^8.2        |
 
 
 ## Important note
@@ -66,9 +66,7 @@ Please make sure you don't have a custom be_tinyMCE.html5 template. If so, take 
 - [ ] some
 - [ ] [magic🪄](https://media.tenor.com/IOEsG9ldvhAAAAAd/mr-bean.gif)
 
-## new Features
-- v0.2.0 -> TinyMCE AI-Text generation Dialog
-- v1.0.0 -> add Contao 5 compatibility 
+## new upcoming Features
 - v1.1.0 -> Contao Backend Help Bot powered by CustomGPT
 
 ## Support

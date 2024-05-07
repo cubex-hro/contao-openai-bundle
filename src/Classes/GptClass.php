@@ -1,9 +1,10 @@
 <?php
 
-namespace Codebuster\GptBundle\Classes;
+namespace Codebuster\ContaoOpenaiBundle\Classes;
 
 use Contao\ArticleModel;
-use Codebuster\GptBundle\Models\ContentElementsModel;
+use Codebuster\ContaoOpenaiBundle\Models\ContentElementsModel;
+use Contao\Config;
 
 class GptClass {
 
@@ -12,11 +13,11 @@ class GptClass {
         $strContent = '';
         $blnHidden = false;
         $customFields = [];
-        if(\Config::get("gpt_hidden_elements") === true) {
+        if(Config::get("gpt_hidden_elements") === true) {
             $blnHidden = true;
         }
-        if(\Config::get("gpt_custom_fields")) {
-            $customFields = unserialize(\Config::get("gpt_custom_fields"));
+        if(Config::get("gpt_custom_fields")) {
+            $customFields = unserialize(Config::get("gpt_custom_fields"));
         }
 
         // get contentelements from page

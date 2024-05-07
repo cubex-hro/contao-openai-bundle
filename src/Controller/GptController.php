@@ -1,22 +1,19 @@
 <?php
 
-namespace Codebuster\GptBundle\Controller;
+namespace Codebuster\ContaoOpenaiBundle\Controller;
 
-use Config;
 use Contao\BackendUser;
+use Contao\Config;
 use Contao\System;
 use Contao\Input;
-use Codebuster\GptBundle\Classes\GptClass;
+use Codebuster\ContaoOpenaiBundle\Classes\GptClass;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 use http\Client;
 
-/**
- * @Route("/_gpt", name=GptController::class, defaults={"_scope" = "backend", "_token_check" = true})
- * @ServiceTag("controller.service_arguments")
- */
+#[Route('/_gpt', name: GptController::class, defaults: ['_scope' => 'backend', '_token_check' => true])]
 class GptController
 {
     public function __invoke(Request $request): Response
@@ -29,10 +26,10 @@ class GptController
             return new Response('Bad Request', Response::HTTP_BAD_REQUEST);
         }
 
-        $strMode = \Input::get('mode');
+        $strMode = Input::get('mode');
 
-        if(\Input::get('id')) {
-            $intPage = \Input::get('id');
+        if(Input::get('id')) {
+            $intPage = Input::get('id');
             $strContent = GptClass::prepareContent($intPage);
         }
 
@@ -106,7 +103,7 @@ class GptController
 
             $content = json_decode($response);
 
-            if($content->error) {
+            if(isset($content->error)) {
                 $arrReturn = [
                     "content" => $content->error->message,
                     "success" => false

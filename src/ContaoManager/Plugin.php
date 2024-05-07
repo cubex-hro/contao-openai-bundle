@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Codebuster\GptBundle\ContaoManager;
 
-use Codebuster\GptBundle\GptBundle;
+use Codebuster\ContaoOpenaiBundle\ContaoOpenaiBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
@@ -35,7 +35,7 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(GptBundle::class)->setLoadAfter([ContaoCoreBundle::class]),
+            BundleConfig::create(ContaoOpenaiBundle::class)->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
 
@@ -45,8 +45,8 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel): ?RouteCollection
     {
         return $resolver
-            ->resolve(__DIR__.'/../Resources/config/routing.yml')
-            ->load(__DIR__.'/../Resources/config/routing.yml')
+            ->resolve(__DIR__.'/../Resources/config/routes.yml')
+            ->load(__DIR__.'/../Resources/config/routes.yml')
             ;
     }
 

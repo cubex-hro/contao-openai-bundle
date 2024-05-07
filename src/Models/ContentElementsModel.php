@@ -1,6 +1,6 @@
 <?php
 
-namespace Codebuster\GptBundle\Models;
+namespace Codebuster\ContaoOpenaiBundle\Models;
 
 use Contao\Model;
 

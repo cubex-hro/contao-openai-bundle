@@ -8,4 +8,4 @@ $GLOBALS['BE_MOD']['gptcontao']['gpt_config'] = array(
 );
 
 
-$GLOBALS['BE_MOD']['design']['page']['gpt_page_seo'] = array('\Codebuster\GptBundle\Classes\GptClass', 'seoModal');
+$GLOBALS['BE_MOD']['design']['page']['gpt_page_seo'] = array(\Codebuster\ContaoOpenaiBundle\Classes\GptClass::class, 'seoModal');

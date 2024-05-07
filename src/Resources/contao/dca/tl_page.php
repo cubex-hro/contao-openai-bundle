@@ -1,7 +1,7 @@
 <?php
 
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
-use Codebuster\GptBundle\Models\ContentElementsModel;
+use Codebuster\ContaoOpenaiBundle\Models\ContentElementsModel;
 
 $strTable = 'tl_page';
 

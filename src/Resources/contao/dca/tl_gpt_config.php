@@ -4,14 +4,16 @@
  * File tl_gpt_config
  */
 
-use Codebuster\GptBundle\Models\ContentElementsModel;
+use Codebuster\ContaoOpenaiBundle\Models\ContentElementsModel;
+use Contao\Database;
+use Contao\DC_File;
 
 $strTable = 'tl_gpt_config';
 
 $GLOBALS['TL_DCA'][$strTable] = [
 //Config
     'config' => [
-        'dataContainer' => 'File'
+        'dataContainer' => DC_File::class
     ],
     //Palettes
     'palettes' => [
