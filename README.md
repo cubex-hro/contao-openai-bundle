@@ -52,7 +52,6 @@ composer require cubex-hro/contao-openai-bundle
 ## To-Do
 
 - [ ] Integrate token calculator (e.g. [GPT-3-Encoder-PHP](https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP))
-- [ ] Error handling for wrong settings, content issues, usage-limits and more
 - [ ] Content weighting through ChatGPT as pre-fetch event
 - [ ] Define personality profile (role) for Chat completions API model
 - [ ] Considerations and testing for the actual maximum character length for the request
@@ -61,6 +60,11 @@ composer require cubex-hro/contao-openai-bundle
 - [ ] do
 - [ ] some
 - [ ] [magic🪄](https://media.tenor.com/IOEsG9ldvhAAAAAd/mr-bean.gif)
+
+## new Features
+- v0.2.0 -> TinyMCE AI-Text generation Dialog
+- v1.0.0 -> add Contao 5 compatibility 
+- v1.1.0 -> Contao Backend Help Bot powered by CustomGPT
 
 ## Support
 Contao Gpt Bundle is a project for the community. If you have suggestions for improvements or comments, use the issues or, best of all, make a pull request.
