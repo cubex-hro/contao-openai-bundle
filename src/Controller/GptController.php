@@ -5,6 +5,7 @@ namespace Codebuster\GptBundle\Controller;
 use Config;
 use Contao\BackendUser;
 use Contao\System;
+use Contao\Input;
 use Codebuster\GptBundle\Classes\GptClass;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,13 +24,17 @@ class GptController
 
         $container = System::getContainer();
         $blnBackend = $container->get('contao.security.token_checker')->hasBackendUser();
+        $strContent = "";
         if ($blnBackend === false) {
             return new Response('Bad Request', Response::HTTP_BAD_REQUEST);
         }
 
         $strMode = \Input::get('mode');
-        $intPage = \Input::get('id');
-        $strContent = GptClass::prepareContent($intPage);
+
+        if(\Input::get('id')) {
+            $intPage = \Input::get('id');
+            $strContent = GptClass::prepareContent($intPage);
+        }
 
         $response = $this->doRequest($strMode,$strContent);
 
@@ -49,8 +54,10 @@ class GptController
 
             if($mode == 'title') {
                 $strPrompt = Config::get('gpt_title_prompt');
-            } else if($mode = 'description') {
+            } else if($mode == 'description') {
                 $strPrompt = Config::get('gpt_desc_prompt');
+            } else if($mode == 'tinymce') {
+                $strPrompt = Input::get('prompt');
             }
 
             if($endpoint == 'Complete') {
@@ -99,16 +106,24 @@ class GptController
 
             $content = json_decode($response);
 
-            if($endpoint == 'Complete') {
-                $strReturn = $content->choices[0]->text;
+            if($content->error) {
+                $arrReturn = [
+                    "content" => $content->error->message,
+                    "success" => false
+                ];
+            } else {
+                if($endpoint == 'Complete') {
+                    $strReturn = $content->choices[0]->text;
 
-            } else if($endpoint == 'Chat') {
-                $strReturn = $content->choices[0]->message->content;
+                } else if($endpoint == 'Chat') {
+                    $strReturn = $content->choices[0]->message->content;
+                }
+
+                $arrReturn = [
+                    "content" => str_replace('"','',trim(preg_replace('/\s+/', ' ', $strReturn))),
+                    "success" => true
+                ];
             }
-
-            $arrReturn = [
-                "content" => str_replace('"','',trim(preg_replace('/\s+/', ' ', $strReturn)))
-            ];
 
             $strReturn = json_encode($arrReturn);
         }

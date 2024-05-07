@@ -38,22 +38,27 @@ class tl_page_gptbundle extends Contao\Backend {
                     fetchPromise.then(response => {
                         return response.json();
                     }).then(content => {
-                        if(mode == "title") {
+                        if(content.success === true) {
+                            if(mode === "title") {
                             titleField.value = content.content;
                             // trigger this damn SERP preview
                             titleField.dispatchEvent(new Event("input", { bubbles: true }));
-                        } else if(mode == "description") {
+                            } else if(mode === "description") {
                             descField.innerHTML = content.content;
                             // trigger this damn SERP preview
                             descField.dispatchEvent(new Event("input", { bubbles: true }));
+                            }
+                            btn.disabled = false;
+                            console.log("MAGIC 🪄🎩");   
+                        } else {
+                            btn.disabled = false;
+                            alert(content.content);
                         }
-                        btn.disabled = false;
-                        console.log("MAGIC 🪄🎩");
                     });
                 }
             </script>
             <div class="widget" style="margin-top:10px;">
-                <button class="tl_submit" style="margin-right:5px;" id="ft_screenshot" onclick="generateSeo(this,'.$dc->id.',\'title\');return false">SEO Titel generieren</button>
+                <button class="tl_submit" style="margin-right:5px;" id="ft_screenshot" onclick="generateSeo(this,' .$dc->id.',\'title\');return false">SEO Titel generieren</button>
                 <button class="tl_submit" id="ft_screenshot" onclick="generateSeo(this,'.$dc->id.',\'description\');return false">SEO Beschreibung generieren</button>
             </div>  
         ';
