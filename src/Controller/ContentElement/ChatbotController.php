@@ -30,6 +30,7 @@ class ChatbotController extends AbstractContentElementController
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
+        $template->isBackend = $this->isBackendScope();
 
         if($model->chatbot_title) {
             $template->title = $model->chatbot_title;
