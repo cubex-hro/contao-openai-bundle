@@ -1,0 +1,9 @@
+<div id="chat-container" class="minimized">
+    <div id="toggle-chat"><?= $this->title ?></div>
+    <div id="chat-window">
+        <div id="messages"></div>
+    </div>
+    <input type="text" id="user-input" placeholder="Nachricht eingeben...">
+    <button id="send-btn">Senden</button>
+</div>
+<script src="/bundles/contaoopenai/chatbot.js"></script>

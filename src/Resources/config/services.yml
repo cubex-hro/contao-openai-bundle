@@ -4,6 +4,17 @@ services:
     autowire: true # Automatically injects dependencies in your services.
     autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-Codebuster\ContaoOpenaiBundle\Controller\:
-  resource: ../../../src/Controller
-  public: true
+  # makes classes in src/ available to be used as services
+  # this creates a service per class whose id is the fully-qualified class name
+  Codebuster\ContaoOpenaiBundle\:
+    resource: "../../../src/"
+    exclude:
+      - "../../DependencyInjection/"
+      - "../../Entity/"
+      - "../../Kernel.php"
+      - "../../Tests/"
+      - "../../Resources/contao"
+
+  Codebuster\ContaoOpenaiBundle\Controller\:
+    resource: ../../../src/Controller
+    public: true
