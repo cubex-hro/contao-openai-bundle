@@ -2,6 +2,7 @@
     "name": "cubex-hro/contao-openai-bundle",
     "type": "contao-bundle",
     "license": "MIT",
+    "version": "1.1.2",
     "description": "enables the generation of meta-title and meta-descriptions in the backend of Contao using ChatGPT from OpenAi",
     "authors": [
         {
@@ -20,7 +21,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "contao/core-bundle": "^5.3"
+        "contao/core-bundle": "^5.3",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.3.1"
